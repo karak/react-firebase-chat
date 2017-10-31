@@ -11,13 +11,21 @@
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
-    "eject": "react-scripts-ts eject"
+    "eject": "react-scripts-ts eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^3.2.13",
+    "@storybook/addon-links": "^3.2.13",
+    "@storybook/react": "^3.2.13",
     "@types/jest": "^21.1.5",
     "@types/node": "^8.0.47",
     "@types/react": "^16.0.19",
     "@types/react-dom": "^16.0.2",
+    "@types/storybook__addon-actions": "^3.0.1",
+    "@types/storybook__addon-links": "^3.0.2",
+    "@types/storybook__react": "^3.0.5",
     "tslint-config-airbnb": "^5.3.0"
   }
 }
