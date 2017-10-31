@@ -21,6 +21,8 @@
     "@storybook/addon-actions": "^3.2.13",
     "@storybook/addon-links": "^3.2.13",
     "@storybook/react": "^3.2.13",
+    "@types/enzyme": "^3.1.1",
+    "@types/enzyme-adapter-react-16": "^1.0.0",
     "@types/jest": "^21.1.5",
     "@types/node": "^8.0.47",
     "@types/react": "^16.0.19",
@@ -29,6 +31,9 @@
     "@types/storybook__addon-actions": "^3.0.1",
     "@types/storybook__addon-links": "^3.0.2",
     "@types/storybook__react": "^3.0.5",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "jest-enzyme": "^4.0.1",
     "react-test-renderer": "^16.0.0",
     "tslint-config-airbnb": "^5.3.0"
   }
