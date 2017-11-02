@@ -237,13 +237,13 @@ yarn add enzyme enzyme-adapter-react-16 @types/enzyme @types/enzyme-adapter-reac
 Add the following lines to "src/setupTests.ts"
 
 ```typescript
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import * as Enzyme from 'enzyme';
+import * as ReactSixteenAdapter from 'enzyme-adapter-react-16';
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({ adapter: new ReactSixteenAdapter() });
 ```
 
-Add `jest-enzyme`
+Add `jest-enzyme` to extend jest with new matchers
 
 ```bash
 yarn add jest-enzyme -D
@@ -253,6 +253,18 @@ Insert the following line to "src/setupTests.ts"
 
 ```typescript
 import 'jest-enzyme';
+```
+
+Insert `typeRoots` to `compilerOptions` in "tsconfig.json" so as to find the bundled declaration file.
+
+```diff
+   "compilerOptions": {
+     "outDir": "build/dist",
+     "module": "esnext",
+     "target": "es5",
+     "lib": ["es6", "dom"],
++    "typeRoots": ["node_modules/@types", "node_modules/jest-enzyme"],
+     "sourceMap": true,
 ```
 
 ### 2. Build components

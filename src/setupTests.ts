@@ -1,7 +1,7 @@
 import './polyfill';
 
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import * as Enzyme from 'enzyme';
+import * as ReactSixteenAdapter from 'enzyme-adapter-react-16';
 import 'jest-enzyme';
 
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({ adapter: new ReactSixteenAdapter() });
