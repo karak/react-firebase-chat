@@ -109,7 +109,7 @@ storiesOf('Button', module)
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
 ```
 
-Added own webpack.config.js in .stories for storybook:
+Added your own webpack.config.js in .stories for storybook:
 
 ```javascript
 const baseConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js');
@@ -119,9 +119,9 @@ module.exports = function () {
 
   newConfig.module.rules.push({
     test: /\.tsx?$/,
-    exclude: /node_modules/,
-    include: /stories/,
-    loaders: ['tslint-loader', 'ts-loader']
+    exclude: [/node_modules/, /__tests__/, /\.(test|spec)\.tsx?$/],
+    include: [/stories/, /src/],
+    loaders: ['ts-loader', 'tslint-loader']
   });
 
   newConfig.resolve.extensions.push('.ts', '.tsx');
