@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import MessageBoard from './MessageBoard';
 import Message, { MessageProps } from './Message';
@@ -38,6 +39,12 @@ describe('<MessageBoard>', () => {
 
       expect(wrapper.find(Message)).toHaveLength(i);
     }
+  });
+
+  it('retains snapshot', () => {
+    const tree = renderer.create(<Message.Group/>).toJSON();
+
+    expect(tree).toMatchSnapshot();
   });
 });
 

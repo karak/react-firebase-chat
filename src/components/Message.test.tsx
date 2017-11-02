@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import { Feed } from 'semantic-ui-react';
 import Message from './Message';
@@ -29,5 +30,11 @@ describe('<Message.Group>', () => {
     const wrapper = shallow(<Message.Group/>);
 
     expect(wrapper.type()).toBe(Feed);
+  });
+
+  it('retains snapshot', () => {
+    const tree = renderer.create(<Message.Group/>).toJSON();
+
+    expect(tree).toMatchSnapshot();
   });
 });
