@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Feed } from 'semantic-ui-react';
+import { Comment } from 'semantic-ui-react';
 
 export interface MessageProps {
   speaker: string;
@@ -10,20 +10,21 @@ export interface MessageProps {
 export default class Message extends React.PureComponent<MessageProps> {
   render() {
     return (
-        <Feed.Event>
-          <Feed.Content>
-            <Feed.Summary>
-              <Feed.User>{this.props.speaker}</Feed.User>
-              <Feed.Date>{this.props.time}</Feed.Date>
-            </Feed.Summary>
-            <Feed.Extra text>{this.props.speech}</Feed.Extra>
-          </Feed.Content>
-        </Feed.Event>
+      <Comment>
+        <Comment.Avatar src="" />
+        <Comment.Content>
+          <Comment.Author as="a">{this.props.speaker}</Comment.Author>
+          <Comment.Metadata>
+            <div>{this.props.time}</div>
+          </Comment.Metadata>
+          <Comment.Text>{this.props.speech}</Comment.Text>
+        </Comment.Content>
+      </Comment>
     );
   }
 
   // tslint:disable-next-line:function-name
   static Group({ children }: { children?: React.ReactNode }) {
-    return <Feed>{children}</Feed>;
+    return <Comment.Group>{children}</Comment.Group>;
   }
 }

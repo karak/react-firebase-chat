@@ -2,6 +2,6 @@
 
 exports[`<Message.Group> retains snapshot 1`] = `
 <div
-  className="ui feed"
+  className="ui comments"
 />
 `;
