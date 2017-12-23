@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Comment } from 'semantic-ui-react';
+const avatarPng = require('../avatar.png');
 
 export interface MessageProps {
   speaker: string;
@@ -11,7 +12,7 @@ export default class Message extends React.PureComponent<MessageProps> {
   render() {
     return (
       <Comment>
-        <Comment.Avatar src="" />
+        <Comment.Avatar src={avatarPng} />
         <Comment.Content>
           <Comment.Author as="a">{this.props.speaker}</Comment.Author>
           <Comment.Metadata>
